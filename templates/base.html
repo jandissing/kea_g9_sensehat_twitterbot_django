@@ -1,0 +1,102 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/pi_icon.jpeg' %}">
+    <link rel="icon" type="image/png" href="{% static 'img/pi_icon.jpeg' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title> Group 09 International </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+    <meta http-equiv="refresh" content="38">{% include 'includes/stylesheets.html' %}
+</head>
+
+<body class="">
+    <div class="wrapper">
+        <div class="sidebar" data-color="orange">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+            <div class="logo">
+                <img src="{% static 'media/KEA_logo.png' %}" height=120px>
+                <a class="simple-text text-body font-weight-bold logo-mini"> BEIT</a>
+                <a class="simple-text text-body font-weight-bold logo-normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3rd
+                    Semester</a>
+                <a href="#" class="simple-text text-body font-weight-bold logo-mini"> G9</a>
+                <a href="#" class="simple-text text-body font-weight-bold logo-normal">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Group 09 INT</a>
+            </div>
+            <div class="sidebar-wrapper" id="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="active ">
+                        <a href="#">
+                            <i class="now-ui-icons design_app"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#LastSeenTweets">
+                            <i class="now-ui-icons ui-1_bell-53"></i>
+                            <p>Last Tweets</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#Measurements">
+                            <i class="now-ui-icons media-2_sound-wave"></i>
+                            <p>Measurements</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#About">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p>About the Team</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel " id="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                        <a class="navbar-brand" href="#">Dashboard for the Raspberry Pi with SenseHat </a>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="admin/">
+                                    <i class="now-ui-icons users_single-02"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Admin</span>
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-sm">
+                <!-- <canvas id=""></canvas> -->
+            </div>
+            <div class="content">{% block content %}{% endblock %}<footer class="footer">
+                    <div class=" container-fluid ">
+                        <div class="text-right"> Website Template Designed by <a href="https://www.creative-tim.com"
+                                target="_blank">Creative Tim</a>. </div>
+                    </div>
+                </footer>
+            </div>
+        </div>{% include 'includes/scripts.html' %}
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+{% extends 'base.html' %} {% load static %}{% block content %} <div class="wrapper ">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-5 col-md-6">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h4 class="card-title">Pressure</h4>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas id="presChart"></canvas>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-6">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h4 class="card-title">Temperature</h4>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas id="tempChart"></canvas>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-6">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h4 class="card-title"> Hardware </h4>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area text-center">
+                        <img src="{% static 'media/rasplogo.png' %}" alt="Thanks to Raspberry Pi" height=220px>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class=""></i> Version 4 Model B with SenseHat
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-6">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h4 class="card-title">Humidity</h4>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas id="humChart"></canvas>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> {# LastSeenTweets Section#} <div id="LastSeenTweets" class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h4 class="card-title">Last Seen Tweets</h4>
+                </div>
+                <div class="card-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class=" text-primary">
+                                        <th> </th>
+                                        <th> Username </th>
+                                        <th class="text-center"> Tweet </th>
+                                    </thead>
+                                    <tbody> {% for item in lastseenid|dictsortreversed:"Id"|slice:"5" %} <tr>
+                                            <td>
+                                                <div class="tweet-avatar"
+                                                    style="background-image: url({{item.img_link}})"></div>
+                                            <td> @{{item.User}} </td>
+                                            <td class="text-center"> {{item.Tweet}}</td>
+                                        </tr> {% endfor %} </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> {# Measurements Section#} <div id="Measurements" class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Measurements </h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th> DateTime </th>
+                                <th> Temperature </th>
+                                <th> Pressure </th>
+                                <th class="text-right"> Humidity </th>
+                            </thead>
+                            <tbody> {% for item in hatdata|dictsortreversed:"Id" %} <tr>
+                                    <td> {{ item.DateTime }} </td>
+                                    <td> {{ item.Temperature }} C </td>
+                                    <td> {{ item.Pressure }} hPa </td>
+                                    <td class="text-right"> {{ item.Humidity }} %</td>
+                                </tr> {% endfor %} </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> {# About Section#} <div id="About" class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> About the Team Members </h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th> </th>
+                                <th> Member </th>
+                                <th> Email </th>
+                            </thead>
+                            <tbody> {% for item in team %} <tr>
+                                    <td>
+                                        <div class="team-avatar"
+                                            style="background-image: url(media/{{ item.Picture }})"></div>
+                                    </td>
+                                    <td> {{ item.Name }} </td>
+                                    <td> <u><a href="{{ item.Email }}">{{ item.Email }}</a> </u></td>
+                                </tr> {% endfor %} </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> {% endblock %}

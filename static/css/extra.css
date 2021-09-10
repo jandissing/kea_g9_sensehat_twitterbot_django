@@ -1,0 +1,35 @@
+.team-avatar{
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 90px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 90px;
+    -moz-background-clip: padding;
+    border-radius: 90px;
+    background-clip: padding-box;
+    margin: 7px 0 0 5px;
+    float: left;
+    background-size: cover;
+    background-position: center center;
+    /* position: relative;
+    top: 50%;
+    transform: translate(50%, 0); */
+}
+
+.tweet-avatar{
+    width: 70px;
+    height: 70px;
+    -webkit-border-radius: 70px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 70px;
+    -moz-background-clip: padding;
+    border-radius: 70px;
+    background-clip: padding-box;
+    /* margin: 7px 0 0 5px; */
+    float: center;
+    background-size: cover;
+    background-position: center center;
+    /* position: relative;
+    top: 50%;
+    transform: translate(50%, 0); */
+}

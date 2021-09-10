@@ -1,0 +1,129 @@
+{% load static %}
+<!--   Core JS Files   -->
+<script src="{% static 'js/core/jquery.min.js' %}"></script>
+<script src="{% static 'js/core/popper.min.js' %}"></script>
+<script src="{% static 'js/core/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+<script src="{% static 'js/plugins/chartjs.min.js' %}"></script>
+<script src="{% static 'js/now-ui-dashboard.min.js' %}" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script>
+
+    $(function () {
+
+        var $tempChart = $("#presChart");
+        $.ajax({
+            url: $tempChart.data("url"),
+            success: function (data) {
+
+                var ctx = $tempChart[0].getContext("2d");
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: [{% for item in data.labels %} '{{ item }}', {% endfor %}],
+            datasets: [{
+                label: 'Pressure',
+                backgroundColor: '#F86332',
+                data: [{% for item in data.pres %} '{{ item }}', {% endfor %}]
+                        }]
+                    },
+        options: {
+        responsive: true,
+        legend: {
+            position: 'top',
+            display: false
+        },
+        // title: {
+        //     display: true,
+        //     text: 'Temperature Bar Chart'
+        // }
+    }
+                });
+
+            }
+        });
+
+    });
+
+</script>
+<script>
+
+    $(function () {
+
+        var $tempChart = $("#tempChart");
+        $.ajax({
+            url: $tempChart.data("url"),
+            success: function (data) {
+
+                var ctx = $tempChart[0].getContext("2d");
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: [{% for item in data.labels %} '{{ item }}', {% endfor %}],
+            datasets: [{
+                label: 'Temperature',
+                backgroundColor: '#ED207F',
+                data: [{% for item in data.temp %} '{{ item }}', {% endfor %}]
+                    }]
+                },
+        options: {
+        responsive: true,
+        legend: {
+            position: 'top',
+            display: false
+        },
+    }
+            });
+
+        }
+    });
+
+});
+
+</script>
+<script>
+
+    $(function () {
+
+        var $tempChart = $("#humChart");
+        $.ajax({
+            url: $tempChart.data("url"),
+            success: function (data) {
+
+                var ctx = $tempChart[0].getContext("2d");
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: [{% for item in data.labels %} '{{ item }}', {% endfor %}],
+            datasets: [{
+                label: 'Humidity',
+                backgroundColor: '#204268',
+                data: [{% for item in data.hum %} '{{ item }}', {% endfor %}]
+                    }]
+                },
+        options: {
+        responsive: true,
+        legend: {
+            position: 'top',
+            display: false,
+        },
+    }
+            });
+
+        }
+    });
+
+});
+
+</script>
+<script>
+    $("#sidebar").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
