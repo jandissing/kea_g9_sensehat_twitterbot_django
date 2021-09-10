@@ -13,7 +13,7 @@
     <meta http-equiv="refresh" content="38">{% include 'includes/stylesheets.html' %}
 </head>
 
-<body class="">
+<body class="body">
     <div class="wrapper">
         <div class="sidebar" data-color="orange">
             <!--
@@ -89,12 +89,9 @@
             <div class="panel-header panel-header-sm">
                 <!-- <canvas id=""></canvas> -->
             </div>
-            <div class="content">{% block content %}{% endblock %}<footer class="footer">
-                    <div class=" container-fluid ">
-                        <div class="text-right"> Website Template Designed by <a href="https://www.creative-tim.com"
-                                target="_blank">Creative Tim</a>. </div>
-                    </div>
-                </footer>
+            <div class="content">
+                <div class="wrapper ">{% block content %}{% endblock %} {% include 'includes/footer.html' %}</div> <br>
+                <br>
             </div>
         </div>{% include 'includes/scripts.html' %}
 </body>
