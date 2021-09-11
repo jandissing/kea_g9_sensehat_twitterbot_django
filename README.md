@@ -46,11 +46,22 @@ python manage.py migrate
 
 7 - If on local computer: insert fake data to dabase:
 
+python scripts/insert_fake_data.py
 
 
-7 - start django server:
+8 - create super user:
+
+python manage.py createsuperuser
+
+
+9 - go to 127.0.0.1:8000/admin and edit the table Team members. After inserting data it will be displayed on the web page.
+
+
+10 - start django server:
 
 python3 manage.py runserver
 
 
 8 - go to 127.0.0.1:8000 and see live website
+
+

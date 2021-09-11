@@ -14,7 +14,7 @@ conn.commit()
 
 print("Inserting fake data in table LastseenId")
 mycursor.execute(
-    "INSERT INTO  DB.LastSeenId (LastSeenId, User, created_at, Img_link) values ('0001', 'johnny009', '2021-09-09 20:25:00', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fdepositphotos.com%2Fvector-images%2Fprofile-picture.html&psig=AOvVaw3YviQ3BPCQYqeCGDB0v4Aj&ust=1631448844084000&source=images&cd=vfe&ved=2ahUKEwjYiuvX8vbyAhUSgqQKHVrPAXAQjRx6BAgAEAk'), ('0002', 'mark002', '2021-09-09 20:30:00', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fprofile%2520picture%2F&psig=AOvVaw2Nf2bxK7U7FE5WHzt4jEmI&ust=1631448851645000&source=images&cd=vfe&ved=2ahUKEwj1w7jb8vbyAhWyNOwKHSD-DgUQjRx6BAgAEAk'), ('0003', 'pietra001', '2021-09-09 20:35:00', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fprofile-photo&psig=AOvVaw2DHNxjIJ0RR9rynTPDB0g8&ust=1631448848392000&source=images&cd=vfe&ved=2ahUKEwi4_vHZ8vbyAhVTlKQKHV2ZCjUQjRx6BAgAEAk');")
+    "INSERT INTO  DB.LastSeenId (LastSeenId, User, created_at, Img_link, Tweet) values ('0001', 'johnny009', '2021-09-09 20:25:00', 'https://pbs.twimg.com/profile_images/1435190386142715908/JzAiW7p__400x400.jpg', 'What is the temperature?'), ('0002', 'mark002', '2021-09-09 20:30:00', 'https://pbs.twimg.com/profile_images/1390573724328513537/N63w2Ffb_400x400.jpg', 'Please tell me the Humidity measurement'), ('0003', 'pietra001', '2021-09-09 20:35:00', 'https://pbs.twimg.com/profile_images/1415153929021624327/lduIZO4i_400x400.jpg', 'Pressure?');")
 
 conn.commit()
 

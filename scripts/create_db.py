@@ -16,15 +16,15 @@ print("Creating a database DB")
 mycursor.execute("CREATE DATABASE DB")
 conn.commit()
 
-time.sleep(2)
-print("Creating table LastseenId")
-mycursor.execute(
-    "CREATE TABLE DB.LastSeenId (Id int auto_increment not null, LastSeenId VARCHAR(19), User VARCHAR(150), created_at DATETIME, Img_link VARCHAR(512), primary key (Id))")
-conn.commit()
+# time.sleep(2)
+# print("Creating table LastseenId")
+# mycursor.execute(
+#     "CREATE TABLE DB.LastSeenId (Id int auto_increment not null, LastSeenId VARCHAR(19), User VARCHAR(150), created_at DATETIME, Img_link VARCHAR(512), Tweet VARCHAR(280), primary key (Id))")
+# conn.commit()
 
-print("Creating table HatData")
-mycursor.execute("CREATE TABLE DB.HatData (Id int auto_increment not null, DateTime DATETIME, Temperature DECIMAL(3,1), Humidity Int, Pressure DECIMAL(5,1), primary key (Id))")
-conn.commit()
+# print("Creating table HatData")
+# mycursor.execute("CREATE TABLE DB.HatData (Id int auto_increment not null, DateTime DATETIME, Temperature DECIMAL(3,1), Humidity Int, Pressure DECIMAL(5,1), primary key (Id))")
+# conn.commit()
 
 print("Creating complete")
 conn.close()
