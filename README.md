@@ -4,7 +4,13 @@
 
 2 - install dependencies on local env:
 
+If on local computer, run:
+
 pip install -r scripts/requirements.txt
+
+If on local raspberry pi, run:
+
+pip install -r scripts/requirements-pi.txt
 
 
 3 - go to main folder and create a virtual environment in the folder:
