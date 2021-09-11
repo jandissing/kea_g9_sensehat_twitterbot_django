@@ -2,5 +2,5 @@
 # user='group09int'
 # password='pass1234'
 
-user = 'root'
-password = '1234'
+user = 'group09int'
+password = 'pass1234'
