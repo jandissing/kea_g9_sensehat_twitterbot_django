@@ -17,7 +17,7 @@ while True:
     pressure = round(sense.get_pressure(), 1)
     humidity = round(sense.get_humidity())
     dateandtime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    message = f"{dateandtime} - T:{temp}C,  P:{pressure} bars,  H:{humidity}%"
+    message = f"{dateandtime} - T:{temp}C,  P:{pressure} hPa,  H:{humidity}%"
     print(message)
     sense.show_message(message)
     print()

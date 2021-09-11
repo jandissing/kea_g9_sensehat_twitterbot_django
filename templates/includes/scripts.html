@@ -36,6 +36,16 @@
             position: 'top',
             display: false
         },
+        scales: {
+            yAxes: [{
+                display: true,
+                ticks: {
+                    suggestedMin: 1010,    // minimum will be 0, unless there is a lower value.
+                    // OR //
+                    suggestedMax: 1018   // maxium value will be 100.
+                }
+            }]
+        }
         // title: {
         //     display: true,
         //     text: 'Temperature Bar Chart'
@@ -76,6 +86,16 @@
             position: 'top',
             display: false
         },
+        scales: {
+            yAxes: [{
+                display: true,
+                ticks: {
+                    suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                    // OR //
+                    suggestedMax: 50   // maximum value will be 100.
+                }
+            }]
+        }
     }
             });
 
@@ -112,6 +132,16 @@
             position: 'top',
             display: false,
         },
+        scales: {
+            yAxes: [{
+                display: true,
+                ticks: {
+                    suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                    // OR //
+                    suggestedMax: 100   // maximum value will be 100.
+                }
+            }]
+        }
     }
             });
 

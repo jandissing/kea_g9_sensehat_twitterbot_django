@@ -119,9 +119,9 @@
                         </thead>
                         <tbody> {% for item in hatdata|dictsortreversed:"Id" %} <tr>
                                 <td> {{ item.DateTime }} </td>
-                                <td> {{ item.Temperature }} C </td>
+                                <td> {{ item.Temperature }}°C </td>
                                 <td> {{ item.Pressure }} hPa </td>
-                                <td class="text-right"> {{ item.Humidity }} %</td>
+                                <td class="text-right"> {{ item.Humidity }}%</td>
                             </tr> {% endfor %} </tbody>
                     </table>
                 </div>
