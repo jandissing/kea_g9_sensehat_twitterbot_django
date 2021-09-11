@@ -2,3 +2,7 @@ venv/
 key.pub
 .gitignore
 .venv/
+scripts/__pycache--/
+core/__pycache--/
+web/__pycache--/
+web/migrations/
