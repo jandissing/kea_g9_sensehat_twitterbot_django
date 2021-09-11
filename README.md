@@ -10,6 +10,7 @@ pip install -r scripts/requirements.txt
 3 - go to main folder and create a virtual environment in the folder:
 
 python -m venv venv
+
 source venv/bin/activate (to activate venv)
 
 
