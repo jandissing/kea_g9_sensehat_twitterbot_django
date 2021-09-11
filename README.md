@@ -44,7 +44,7 @@ python scripts/insert_fake_data.py
 python manage.py createsuperuser
 
 
-<b>10 - go to 127.0.0.1:8000/admin and edit the table Team members. After inserting data it will be displayed on the web page.
+<b>10 - go to 127.0.0.1:8000/admin and edit the table Team members. After inserting data it will be displayed on the web page.</b> 
 
 
 <b>11 - start django server:</b> 
