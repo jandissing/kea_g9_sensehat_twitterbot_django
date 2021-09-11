@@ -1,9 +1,10 @@
 import mysql.connector as mariadb
 import time
+from connection import user, password
 
 print("Create_db running...")
 
-conn = mariadb.connect(user='group09int', password='pass1234',
+conn = mariadb.connect(user=user, password=password,
                        host='localhost', port='3306')
 mycursor = conn.cursor()
 

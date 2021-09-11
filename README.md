@@ -8,7 +8,7 @@ If on local computer, run:
 
 pip install -r scripts/requirements.txt
 
-If on local raspberry pi, run:
+If on remote raspberry pi, run:
 
 pip install -r scripts/requirements-pi.txt
 
@@ -23,14 +23,34 @@ source venv/bin/activate (to activate venv)
 
 4 - install dependencies on virtual env:
 
-If If on local computer, substitute pip3 for pip:
+If If on local computer:
 
-pip3 install -r requirementsweb.txt
+pip install -r requirements-web.txt
+
+If on remote raspberry pi, run:
+
+pip3 install -r requirements-web-pi.txt
 
 
-5 - start django server:
+5 - If on local computer: run create_db:
+
+python scripts/create_db.py
+
+
+6 - If on local computer: make migrations and migrate them to database:
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+
+7 - If on local computer: insert fake data to dabase:
+
+
+
+7 - start django server:
 
 python3 manage.py runserver
 
 
-6 - go to 127.0.0.1:8000 and see live website
+8 - go to 127.0.0.1:8000 and see live website

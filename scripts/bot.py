@@ -2,10 +2,11 @@ import tweepy
 import time
 import mysql.connector as mariadb
 from sense_hat import SenseHat
+from connection import user, password
 
 sense = SenseHat()
 
-conn = mariadb.connect(user='group09int', password='pass1234',
+conn = mariadb.connect(user=user, password=password,
                        database='DB', host='localhost', port='3306')
 
 mycursor = conn.cursor()
@@ -23,7 +24,7 @@ api = tweepy.API(auth)
 
 
 def retrieve_last_seen_id():
-    conn = mariadb.connect(user='group09int', password='pass1234',
+    conn = mariadb.connect(user=user, password=password,
                            database='DB', host='localhost', port='3306')
 
     mycursor = conn.cursor()
@@ -49,7 +50,7 @@ def retrieve_last_seen_id():
 
 
 def store_last_seen_id(last_seen_id, user, created_at, profile_image_url_https, full_text):
-    conn = mariadb.connect(user='group09int', password='pass1234',
+    conn = mariadb.connect(user=user, password=password,
                            database='DB', host='localhost', port='3306')
     mycursor = conn.cursor()
     mycursor.execute(
@@ -68,7 +69,8 @@ def reply():
     for m in reversed(mentions):
         print(str(m.id) + ' - ' + m.full_text)
         last_seen_id = m.id
-        store_last_seen_id(last_seen_id, m.user.screen_name, m.created_at, m.user.profile_image_url_https, m.full_text)
+        store_last_seen_id(last_seen_id, m.user.screen_name,
+                           m.created_at, m.user.profile_image_url_https, m.full_text)
         if 'pressure' in m.full_text.lower() and 'temperature' in m.full_text.lower() and 'humidity' in m.full_text.lower():
             print('found keyphrase')
             print('responding back...')

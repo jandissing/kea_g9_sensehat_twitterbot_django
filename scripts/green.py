@@ -2,9 +2,10 @@ import time
 import mysql.connector as mariadb
 from sense_hat import SenseHat
 from datetime import datetime
+from connection import user, password
 
 print("Green script running...")
-conn = mariadb.connect(user='group09int', password='pass1234',
+conn = mariadb.connect(user=user, password=password,
                        database='DB', host='localhost', port='3306')
 mycursor = conn.cursor()
 
