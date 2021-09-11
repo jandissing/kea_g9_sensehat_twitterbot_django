@@ -15,11 +15,15 @@ pip install -r scripts/requirements-pi.txt
 
 3 - go to main folder and create a virtual environment in the folder:
 
+If If on local computer, substitute python3 for python:
+
 python3 -m venv venv
 source venv/bin/activate (to activate venv)
 
 
 4 - install dependencies on virtual env:
+
+If If on local computer, substitute pip3 for pip:
 
 pip3 install -r requirementsweb.txt
 
